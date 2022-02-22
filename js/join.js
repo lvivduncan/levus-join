@@ -5,6 +5,11 @@ if (document.querySelector(".join")) {
 	const joinButtonsSend = document.querySelector(".join button")
 	const joinOutput = document.querySelector(".join p")
 
+	const random = Math.floor(Math.random() * joinButtons.length)
+
+	joinButtons[random].className = "selected"
+	joinOutput.textContent = joinButtons[random].dataset.txt
+
 	for (let i = 0, length = joinButtons.length; i < length; i++) {
 		joinButtons[i].addEventListener("click", function () {
 			for (let k = 0; k < length; k++) {
